@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pitcheroo – Winning Pitches in Under a Minute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Turn your story into six investor-ready pitches in seconds. Pitcheroo transforms 7 key story elements into sharp, ready-to-use pitches for investors, buyers, and brands.">
+<!-- Open Graph / social share -->
+<meta property="og:title" content="Pitcheroo – Winning pitches in under a minute" />
+<meta property="og:description" content="Turn 7 simple story beats into six sharp, investor-ready pitches in seconds. No deck, no blank page, no overthinking." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://pitcheroo.ai" />
+<meta property="og:image" content="https://pitcheroo.ai/assets/hero.jpg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pitcheroo – Winning pitches in under a minute" />
+<meta name="twitter:description" content="Turn 7 simple story beats into six sharp, investor-ready pitches in seconds." />
+<meta name="twitter:image" content="https://pitcheroo.ai/assets/hero.jpg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Open Sans -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap">
+
+  <style>
+    :root {
+      --yellow: #fbce3e;
+      --yellow-dark: #f5b700;
+      --bg: #000000;
+      --bg-dark: #111014;
+      --card: #202029;
+      --muted: #d3d3d6;
+      --border: #3a3a3f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: #ffffff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER (desktop + mobile hamburger) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #000;
+      border-bottom: 3px solid #222;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand svg {
+      height: 34px;
+      width: auto;
+    }
+
+    .brand-name {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #f3f3f5;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .main-nav a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: none;
+      background: var(--yellow);
+      color: #111;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 3px 0 #b68f06;
+    }
+
+    .nav-cta:hover {
+      background: var(--yellow-dark);
+    }
+
+    /* Hamburger button (hidden on desktop) */
+    .nav-toggle {
+      display: none;
+      width: 34px;
+      height: 28px;
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle span {
+      display: block;
+      height: 3px;
+      border-radius: 999px;
+      background: #fff;
+      margin: 4px 0;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 900px) {
+      .header-inner {
+        padding: 10px 16px;
+        gap: 12px;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 16px 16px;
+        background: #050505;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        display: none; /* hidden until toggled */
+      }
+
+      .main-nav a {
+        width: 100%;
+        padding: 4px 0;
+      }
+
+      .nav-cta {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* when header has .nav-open, show menu */
+      .site-header.nav-open .main-nav {
+        display: flex;
+      }
+
+      /* animate hamburger into an “X” */
+      .site-header.nav-open .nav-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .site-header.nav-open .nav-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+      .site-header.nav-open .nav-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* hero + grid layout tweaks on mobile */
+      .hero-bg { 
+        height: 360px; 
+      }
+
+      .why-grid,
+      .steps-grid,
+      .value-grid,
+      .testimonials-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+/* HERO – cinematic parallax + glass panel */
+.hero {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Background image with subtle parallax + light boost */
+.hero-bg {
+  position: relative;
+  height: 460px; /* adjust up/down if you want more/less image */
+  background: url("assets/hero.jpg") center/cover no-repeat;
+  filter: brightness(1.25);
+  transform: translateY(calc(var(--scroll, 0) * 0.05));
+  will-change: transform;
+}
+
+/* Dark gradient overlay so text is readable but image still shows */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+/* Soft vignette around the edges for cinematic feel */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+/* Centered content container */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+/* Glass panel behind copy */
+.hero-glass {
+  backdrop-filter: blur(10px) brightness(1.1);
+  -webkit-backdrop-filter: blur(10px) brightness(1.1); /* Safari */
+  background: rgba(0, 0, 0, 0.25);
+  padding: 32px 40px 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-glass h1 {
+  font-size: clamp(32px, 4vw, 40px);
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.hero-glass p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* CTA button with glow and lift */
+.hero-cta {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  background: var(--yellow);
+  color: #111;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 0 #b68f06,
+    0 0 18px rgba(251, 206, 62, 0.75);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+              background 0.12s ease-out;
+}
+
+.hero-cta:hover {
+  background: var(--yellow-dark);
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 0 #b68f06,
+    0 0 22px rgba(251, 206, 62, 0.9);
+}
+
+/* Microcopy under CTA */
+.hero-microcopy {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hero-bg {
+    height: 380px;
+  }
+  .hero-glass {
+    padding: 22px 20px 18px;
+  }
+}
+
+    /* SECTIONS */
+    section {
+      padding: 40px 0;
+      background: var(--bg);
+    }
+    section:nth-of-type(odd) {
+      background: var(--bg-dark);
+    }
+    h2.section-title {
+      text-align: center;
+      font-size: 28px;
+      margin: 0 0 16px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    /* WHY PITCHEROO */
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .eyebrow {
+      margin: 0 0 4px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--yellow);
+    }
+    .why-left h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+    .why-left p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+    .why-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .why-bullets li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .why-bullets span.bullet-dot {
+      color: var(--yellow);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .why-card {
+      background: #000;
+      border-radius: 18px;
+      border: 2px solid #ffffff;
+      padding: 18px 20px;
+      text-align: left;
+    }
+    .why-card-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .elements-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 14px;
+    }
+    .elements-list li {
+      color: var(--muted);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .elements-dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+
+    /* 3-STEP */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .step-card {
+      background: #44444e;
+      border-radius: 18px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .step-number {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      margin: 0 auto 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--yellow);
+      color: #111;
+      font-weight: 800;
+    }
+    .step-card h3 {
+      font-size: 16px;
+      margin: 0 0 6px;
+    }
+    .step-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* VALUE */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .value-card {
+      background: #000;
+      border-radius: 18px;
+      border: 2px solid var(--yellow);
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .value-card h3 {
+      font-size: 15px;
+      margin: 0 0 8px;
+    }
+    .value-card p {
+      font-size: 14px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .center-cta {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .center-cta button {
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: none;
+      background: var(--yellow);
+      color: #111;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #b68f06;
+    }
+    .center-cta button:hover { background: var(--yellow-dark); }
+
+    /* WHO IT'S FOR */
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .chip {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #3a3a3f;
+      font-size: 13px;
+      background: #000;
+      color: var(--muted);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .testimonial {
+      background: #000;
+      border-radius: 18px;
+      border: 3px solid var(--yellow);
+      padding: 14px 14px 12px;
+      background-clip: padding-box;
+    }
+    .testimonial-inner {
+      background: var(--yellow);
+      border-radius: 12px;
+      padding: 10px 10px 8px;
+      color: #111;
+      font-size: 14px;
+    }
+    .testimonial-inner p {
+      margin: 0 0 8px;
+    }
+    .testimonial-inner strong {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    /* FINAL CTA STRIP */
+    .cta-strip {
+      background: #2c2c31;
+      text-align: center;
+      padding: 32px 16px;
+    }
+    .cta-strip h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+    .cta-strip p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 16px 12px 24px;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: #fff; }
+/* Full mobile layout cleanup */
+@media (max-width: 700px) {
+  /* Stack all grids */
+  .why-grid,
+  .steps-grid,
+  .value-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Space + center the WHY card */
+  .why-card {
+    margin: 20px auto 0;
+    max-width: 500px;
+  }
+
+  /* Slight readability polish on very narrow screens */
+  .why-left p,
+  .why-left li {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+}
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <!-- Inline logo (unchanged) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 175">
+        <defs>
+          <style>
+            .st0 { fill:#f3c716; stroke-width:4.75px; }
+            .st0, .st1 { stroke:#fbce3e; stroke-miterlimit:10; }
+            .st1 { fill:none; stroke-width:5.94px; }
+          </style>
+        </defs>
+        <polygon class="st1" points="101.22 110.05 74.85 110.05 61.68 87.61 74.85 65.16 101.22 65.16 114.39 87.61 101.22 110.05"/>
+        <ellipse class="st1" cx="88.03" cy="85.54" rx="52.67" ry="51.8"/>
+        <line class="st1" x1="10.4" y1="65.16" x2="99.04" y2="65.16"/>
+        <ellipse class="st0" cx="10.4" cy="65.16" rx="5.4" ry="5.32"/>
+        <line class="st1" x1="69.02" y1="10.31" x2="113.34" y2="85.79"/>
+        <path class="st0" d="M71.73,14.91c-2.58,1.46-5.89.6-7.4-1.94s-.6-5.8,1.98-7.26,5.89-.6,7.4,1.94c1.51,2.54.6,5.8-1.98,7.26Z"/>
+        <line class="st1" x1="30.05" y1="141.47" x2="74.36" y2="65.99"/>
+        <path class="st0" d="M32.76,136.86c2.58,1.46,3.48,4.72,1.98,7.26-1.49,2.54-4.8,3.42-7.4,1.94-2.58-1.46-3.48-4.72-1.98-7.26s4.8-3.42,7.4-1.94Z"/>
+        <line class="st1" x1="104.15" y1="164.69" x2="62.34" y2="87.83"/>
+        <path class="st0" d="M101.61,160c2.63-1.39,5.91-.41,7.32,2.19s.41,5.82-2.22,7.19-5.91.41-7.32-2.19-.41-5.82,2.22-7.19Z"/>
+        <line class="st1" x1="164.6" y1="110.05" x2="75.96" y2="110.05"/>
+        <ellipse class="st0" cx="164.6" cy="110.05" rx="5.4" ry="5.32"/>
+        <line class="st1" x1="148.47" y1="29.78" x2="104.15" y2="105.25"/>
+        <path class="st0" d="M145.78,34.38c-2.58-1.46-3.48-4.72-1.98-7.26s4.8-3.42,7.4-1.94,3.48,4.72,1.98,7.26c-1.5,2.54-4.8,3.42-7.4,1.94Z"/>
+      </svg>
+      <span class="brand-name">PITCHEROO</span>
+    </a>
+
+    <!-- Hamburger button (mobile) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Main nav links -->
+    <nav class="main-nav">
+      <a href="#how">How it Works</a>
+      <a href="#value">What You Get</a>
+      <a href="#testimonials">What Others Say</a>
+    </nav>
+
+    <!-- Sign In CTA -->
+    <a href="https://app.pitcheroo.ai" class="nav-cta" target="_blank" rel="noopener">
+      Sign In
+    </a>
+  </div>
+</header>
+
+  <main>
+    <!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-glass">
+      <h1>Winning pitches in under a minute.</h1>
+      <p>
+        Turn 7 simple story beats into six sharp, investor-ready pitches in seconds.
+        No deck, no blank page, no overthinking.
+      </p>
+      <a href="https://app.pitcheroo.ai">
+        <button class="hero-cta">Generate My First 6 Pitches Free</button>
+      </a>
+      <div class="hero-microcopy">
+        No signup · No credit card · Keep anything you like
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- WHY PITCHEROO -->
+    <section id="how">
+      <div class="wrap">
+        <div class="why-grid">
+          <div class="why-left">
+            <p class="eyebrow">Why Pitcheroo</p>
+            <h3>Never lose the room again.</h3>
+            <p><strong>Say it in one breath, with six ways to say it.</strong></p>
+            <p>Investors skim. Customers scan. Teams tune out. Pitcheroo turns your own facts into tight, story-shaped pitches that land fast.</p>
+            <ul class="why-bullets">
+              <li><span class="bullet-dot">•</span><span><strong>Say it in under 50 words.</strong> Every pitch fits in a single breath, so you never ramble or talk past the moment.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Six takes, not one shot.</strong> Get 2 Investor, 2 Brand, and 2 Cinematic versions instantly.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Built on your reality.</strong> Pitcheroo never invents facts—it just rewrites what you give it.</span></li>
+            </ul>
+          </div>
+          <aside class="why-card">
+            <div class="why-card-title">You pilot. We pitch.</div>
+            <p style="margin:0 0 4px;font-size:14px;color:var(--muted);">Drop in 7 story beats, and Pitcheroo does the rest:</p>
+            <ul class="elements-list">
+              <li><span class="elements-dot"></span> WHO</li>
+              <li><span class="elements-dot"></span> SETTING</li>
+              <li><span class="elements-dot"></span> TRIGGER</li>
+              <li><span class="elements-dot"></span> GOAL</li>
+              <li><span class="elements-dot"></span> STRUGGLE</li>
+              <li><span class="elements-dot"></span> TURNING POINT</li>
+              <li><span class="elements-dot"></span> RESOLUTION</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS -->
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Perfect pitch, zero friction.</h2>
+        <p class="section-sub">From idea to six ready-to-use pitches in three quick moves.</p>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Define Your Elements</h3>
+            <p>Paste in the 7 story beats you already know: who you are, where you play, the problem, goal, struggle, turning point, and result.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Choose Your Length</h3>
+            <p>Choose punchy 1-sentence hooks, 2-sentence mini-stories, or both—so you’re ready for intros, decks, and emails.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Generate &amp; Refine</h3>
+            <p>Hit generate to see six fresh takes. Tweak your inputs and regenerate until one lands exactly right for the room.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE -->
+    <section id="value">
+      <div class="wrap">
+        <h2 class="section-title">Maximum signal, minimum effort.</h2>
+        <p class="section-sub">Built for founders, operators, and storytellers who don’t have time to be copywriters.</p>
+        <div class="value-grid">
+          <div class="value-card">
+            <h3>Pitch-native Structure</h3>
+            <p>Built around a 7-element framework tested on real pitches, so every output feels like a story—not a feature dump.</p>
+          </div>
+          <div class="value-card">
+            <h3>Instant Variants</h3>
+            <p>Get investor, brand, and cinematic tones in a single click, so you can match the room instead of guessing.</p>
+          </div>
+          <div class="value-card">
+            <h3>Founder-Speed Iteration</h3>
+            <p>Regenerate in seconds as your product, roadmap, or audience shifts. Your pitch stays current without weekend rewrites.</p>
+          </div>
+        </div>
+        <div class="center-cta">
+          <a href="https://app.pitcheroo.ai">
+            <button>Generate My First 6 Pitches Free</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Who Pitcheroo is built for</h2>
+        <p class="section-sub">If you’re selling ideas, you’re in the right place.</p>
+        <div class="chips-row">
+          <div class="chip">Startup founders</div>
+          <div class="chip">CEOs &amp; exec teams</div>
+          <div class="chip">Sales &amp; BD leads</div>
+          <div class="chip">Consultants &amp; advisors</div>
+          <div class="chip">Nonprofit &amp; grant writers</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="wrap">
+        <h2 class="section-title">What others say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-inner">
+              <p>“Pitcheroo turned my rambling founder story into three clear versions. I used the investor one in a board meeting the next day and got a yes on moving forward.”</p>
+              <strong>A. Zweemer, CEO, Chassi</strong>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-inner">
+              <p>“Instead of spending weekends rewriting our pitch deck, I can spin up new angles in minutes and test them with the team. It’s become part of our launch checklist.”</p>
+              <strong>K. Meyer, Growth Loop Advisors</strong>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-inner">
+              <p>“We sell hardware, software, and services. Pitcheroo helped us find the right pitch for each buyer without starting from a blank page every time.”</p>
+              <strong>K. Alves, CEO, Scosche Industries</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-strip">
+      <div class="wrap">
+        <h2>Ready to hear “that’s it” instead of “can you tighten this”?</h2>
+        <p>Generate your first six pitches in seconds—no signup, no credit card, keep anything you like.</p>
+        <a href="https://app.pitcheroo.ai">
+          <button class="hero-cta">Generate My First 6 Pitches Free</button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ©2025 Pitcheroo.ai ·
+    <a href="#">Privacy</a> ·
+    <a href="#">Terms</a> ·
+    <a href="mailto:matthew.may@me.com">Contact</a>
+  </footer>
+<script>
+  // Mobile nav toggle
+  const headerEl = document.querySelector('.site-header');
+  const navToggle = document.querySelector('.nav-toggle');
+
+  if (headerEl && navToggle) {
+    navToggle.addEventListener('click', () => {
+      const open = headerEl.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Subtle parallax for hero background
+  window.addEventListener("scroll", () => {
+    const scroll = window.scrollY || window.pageYOffset || 0;
+    document.documentElement.style.setProperty("--scroll", scroll);
+  });
+</script>
+</body>
+</html>
