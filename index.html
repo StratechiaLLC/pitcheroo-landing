@@ -317,41 +317,6 @@
     .hero-microcopy .sep { opacity: 0.35; }
 
     /* ============================================================
-       STAT STRIP
-    ============================================================ */
-    .stat-strip {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .stat-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .stat-item {
-      padding: 32px 20px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-number {
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 5px;
-    }
-    .stat-label {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* ============================================================
        PITCH PREVIEW
     ============================================================ */
     .preview-grid {
@@ -707,19 +672,6 @@
     .footer-links a:hover { color: var(--ink); }
 
     /* ============================================================
-       SCROLL ANIMATIONS
-    ============================================================ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ============================================================
        RESPONSIVE
     ============================================================ */
     @media (max-width: 900px) {
@@ -752,14 +704,6 @@
       .use-cases-grid { grid-template-columns: 1fr; }
 
       .why-grid { grid-template-columns: 1fr; gap: 36px; }
-
-      .stat-inner { grid-template-columns: 1fr; }
-      .stat-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 22px 20px;
-      }
-      .stat-item:last-child { border-bottom: none; }
 
       .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -815,7 +759,7 @@
 
     <div class="header-actions">
       <a href="https://app.pitcheroo.ai" class="btn btn-ghost" style="font-size:14px;padding:8px 18px;">Sign In</a>
-      <a href="https://app.pitcheroo.ai" class="btn btn-primary" style="font-size:14px;padding:8px 18px;">Try Now</a>
+      <a href="https://app.pitcheroo.ai" class="btn btn-primary" style="font-size:14px;padding:8px 18px;">Generate</a>
     </div>
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -841,7 +785,7 @@
     <p class="hero-tagline">Sell Your Story in a Single Breath.</p>
 
     <div class="hero-cta-group">
-      <a href="https://app.pitcheroo.ai" class="btn btn-primary btn-lg">Generate My Stories</a>
+      <a href="https://app.pitcheroo.ai" class="btn btn-primary btn-lg">Generate</a>
       <a href="#how" class="btn btn-ghost btn-lg">See How It Works</a>
     </div>
 
@@ -852,26 +796,8 @@
     </div>
   </section>
 
-  <!-- STAT STRIP -->
-  <div class="stat-strip">
-    <div class="stat-inner">
-      <div class="stat-item">
-        <div class="stat-number">6</div>
-        <div class="stat-label">Different stories per run</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3</div>
-        <div class="stat-label">Distinct tones &mdash; Investor, Brand, Cinematic</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">&lt;60s</div>
-        <div class="stat-label">From blank page to six pitch-ready stories</div>
-      </div>
-    </div>
-  </div>
-
   <!-- PITCH PREVIEW -->
-  <section class="alt fade-up">
+  <section class="alt" id="examples">
     <div class="wrap">
       <div class="centered">
         <span class="eyebrow">See It In Action</span>
@@ -881,15 +807,15 @@
       <div class="preview-grid">
         <div class="preview-card">
           <span class="tone-badge">Cinematic</span>
-          <p>In post-pandemic Pittsburgh, a 12-person robotics startup faced a warehouse industry buckling under labor shortages and injury reports. When unions braced for replacement, the team built sensors that learned from workers themselves &mdash; cutting injuries 45%, tripling contracts, and proving automation could safeguard the human spirit.</p>
+          <p>After the last film distributor pulled out, a single-screen movie theater in Montana sat facing empty seats and unpaid rent, fighting isolation and apathy to keep storytelling alive, until neighbors rallied through community crowdfunding and classic-film nights that packed the aisles, sold out weekends, and lit the marquee with new local pride.</p>
         </div>
         <div class="preview-card">
           <span class="tone-badge">Investor</span>
-          <p>A 12-person Pittsburgh robotics startup tackled warehouse shortages and injury risks with adaptive sensor automation. Despite union pushback and tight margins, their system cut injuries by 45%, tripled contracts, and redefined productivity through human-centered design.</p>
+          <p>A single-screen Montana theater converted empty seats and unpaid rent into sold-out weekends after the last film distributor exited, using community crowdfunding and classic-film nights to beat isolation and apathy, keep storytelling alive, and build new local pride that positioned it as a durable cultural anchor for rural markets.</p>
         </div>
         <div class="preview-card">
           <span class="tone-badge">Brand</span>
-          <p>When workers feared robots would take their place, a small Pittsburgh startup flipped the story. Their sensor-driven machines learned from people, keeping them safer &mdash; and turning technology into a quiet act of respect.</p>
+          <p>Left with empty seats and unpaid rent after the last film distributor walked away, a small Montana single-screen theater leaned on its neighbors, whose community crowdfunding and classic-film nights softened isolation and apathy, kept storytelling alive, and sold out weekends, warming the town with new local pride.</p>
         </div>
       </div>
       <p class="preview-note">Each run generates two variants per tone &mdash; so you always have options to compare.</p>
@@ -897,7 +823,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how" class="fade-up">
+  <section id="how">
     <div class="wrap">
       <div class="centered">
         <span class="eyebrow">How It Works</span>
@@ -925,7 +851,7 @@
   </section>
 
   <!-- WHY PITCHEROO -->
-  <section class="alt fade-up" id="why">
+  <section class="alt" id="why">
     <div class="wrap">
       <div class="why-grid">
         <div class="why-left">
@@ -994,7 +920,7 @@
   </section>
 
   <!-- WHAT YOU GET -->
-  <section id="value" class="fade-up">
+  <section id="value">
     <div class="wrap">
       <div class="centered">
         <span class="eyebrow">What You Get</span>
@@ -1037,7 +963,7 @@
   </section>
 
   <!-- USE CASES -->
-  <section class="alt fade-up" id="usecases">
+  <section class="alt" id="usecases">
     <div class="wrap">
       <div class="centered">
         <span class="eyebrow">Use Cases</span>
@@ -1073,7 +999,7 @@
   <section class="cta-final">
     <h2>Ready to hear &ldquo;that&rsquo;s it!&rdquo;<br>instead of &ldquo;can you tighten this?&rdquo;</h2>
     <p>Sign in to save and revisit your best ones.</p>
-    <a href="https://app.pitcheroo.ai" class="btn btn-primary btn-lg">Generate My Stories</a>
+    <a href="https://app.pitcheroo.ai" class="btn btn-primary btn-lg">Generate</a>
   </section>
 
 </main>
@@ -1104,11 +1030,6 @@
     })
   );
 
-  // Scroll animations
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
 <script>
