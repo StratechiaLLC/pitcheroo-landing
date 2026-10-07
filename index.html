@@ -545,54 +545,6 @@
     .elements-output .tone-badge { margin: 0; }
 
     /* ============================================================
-       VALUE PROPS
-    ============================================================ */
-    .value-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .value-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 28px 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .value-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--r-sm);
-      background: var(--bg-alt);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-    .value-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--ink);
-      stroke-width: 1.75;
-      fill: none;
-    }
-
-    .value-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .value-card p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    /* ============================================================
        USE CASES
     ============================================================ */
     .use-cases-grid {
@@ -725,7 +677,6 @@
 
       .preview-grid,
       .steps-grid,
-      .value-grid,
       .use-cases-grid { grid-template-columns: 1fr; }
 
       .why-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -776,9 +727,9 @@
     </a>
 
     <nav class="main-nav" id="mainNav">
-      <a href="#how">How it Works</a>
       <a href="#why">Why Pitcheroo</a>
-      <a href="#value">What You Get</a>
+      <a href="#how">How it Works</a>
+      <a href="#examples">Examples</a>
       <a href="#usecases">Use Cases</a>
     </nav>
 
@@ -825,60 +776,6 @@
       <img src="assets/hero-room.jpg" width="1200" height="900" fetchpriority="high"
            alt="A presenter stands before a meeting room as the audience listens">
     </figure>
-  </section>
-
-  <!-- PITCH PREVIEW -->
-  <section class="alt" id="examples">
-    <div class="wrap">
-      <div class="centered">
-        <span class="eyebrow">See It In Action</span>
-        <h2 class="section-title">Three different flavors. One set of inputs.</h2>
-        <p class="section-sub">Here&rsquo;s what Pitcheroo generates from a single set of 7 story elements &mdash; across all three tones.</p>
-      </div>
-      <div class="preview-grid">
-        <div class="preview-card">
-          <span class="tone-badge">Cinematic</span>
-          <p>After the last film distributor pulled out, a single-screen movie theater in Montana sat facing empty seats and unpaid rent, fighting isolation and apathy to keep storytelling alive, until neighbors rallied through community crowdfunding and classic-film nights that packed the aisles, sold out weekends, and lit the marquee with new local pride.</p>
-        </div>
-        <div class="preview-card">
-          <span class="tone-badge">Investor</span>
-          <p>A single-screen Montana theater converted empty seats and unpaid rent into sold-out weekends after the last film distributor exited, using community crowdfunding and classic-film nights to beat isolation and apathy, keep storytelling alive, and build new local pride that positioned it as a durable cultural anchor for rural markets.</p>
-        </div>
-        <div class="preview-card">
-          <span class="tone-badge">Brand</span>
-          <p>Left with empty seats and unpaid rent after the last film distributor walked away, a small Montana single-screen theater leaned on its neighbors, whose community crowdfunding and classic-film nights softened isolation and apathy, kept storytelling alive, and sold out weekends, warming the town with new local pride.</p>
-        </div>
-      </div>
-      <p class="preview-note">Each run generates two variants per tone &mdash; so you always have options to compare.</p>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how">
-    <div class="wrap">
-      <div class="centered">
-        <span class="eyebrow">How It Works</span>
-        <h2 class="section-title">From blank page to six stories in three simple steps.</h2>
-        <p class="section-sub">No pitch deck. No copywriter. No weekend rewrite.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">1</div>
-          <h3>Fill In Your Story</h3>
-          <p>Enter the story elements you already know &mdash; who you are, where you play, the problem, your goal, the obstacle, the turning point, and the result.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">2</div>
-          <h3>Choose Your Length</h3>
-          <p>Pick a tight 1-sentence hook or a richer 2-sentence story &mdash; so you&rsquo;re covered whether it&rsquo;s a cold email, a deck slide, or a live room.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">3</div>
-          <h3>Generate &amp; Go</h3>
-          <p>Hit generate and get six polished stories in under a minute. Adjust your inputs and regenerate until one lands exactly right for the moment.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- WHY PITCHEROO -->
@@ -950,51 +847,63 @@
     </div>
   </section>
 
-  <!-- WHAT YOU GET -->
-  <section id="value">
+  <!-- HOW IT WORKS -->
+  <!-- [COPY: step text still describes the old form; the app now has Guide me / describe it in your own words / Speak] -->
+  <section id="how">
     <div class="wrap">
       <div class="centered">
-        <span class="eyebrow">What You Get</span>
-        <h2 class="section-title">Maximum signal. Minimum noise.</h2>
-        <p class="section-sub">Built for business storytellers who don&rsquo;t have time to be copywriters.</p>
+        <span class="eyebrow">How It Works</span>
+        <h2 class="section-title">From blank page to six stories in three simple steps.</h2>
+        <p class="section-sub">No pitch deck. No copywriter. No weekend rewrite.</p>
       </div>
-      <div class="value-grid">
-        <div class="value-card">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <h3>Pitch-native Structure</h3>
-          <p>Built around a 7-element framework tested on real pitches. Every output feels like a story &mdash; not a feature dump or a value prop.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Fill In Your Story</h3>
+          <p>Enter the story elements you already know &mdash; who you are, where you play, the problem, your goal, the obstacle, the turning point, and the result.</p>
         </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-            </svg>
-          </div>
-          <h3>Every Tone at Once</h3>
-          <p>Investor, brand, and cinematic tones in a single click. Eliminate guesswork. Match the room regardless of who&rsquo;s in it.</p>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Choose Your Length</h3>
+          <p>Pick a tight 1-sentence hook or a richer 2-sentence story &mdash; so you&rsquo;re covered whether it&rsquo;s a cold email, a deck slide, or a live room.</p>
         </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24">
-              <polyline points="23 4 23 10 17 10"/>
-              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-            </svg>
-          </div>
-          <h3>Founder-Speed Iteration</h3>
-          <p>Regenerate in under a minute as your product, roadmap, or audience shifts. No weekend rewrites. No blank pages. No bottleneck.</p>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Generate &amp; Go</h3>
+          <p>Hit generate and get six polished stories in under a minute. Adjust your inputs and regenerate until one lands exactly right for the moment.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PITCH PREVIEW -->
+  <section class="alt" id="examples">
+    <div class="wrap">
+      <div class="centered">
+        <span class="eyebrow">See It In Action</span>
+        <h2 class="section-title">Three different flavors. One set of inputs.</h2>
+        <p class="section-sub">Here&rsquo;s what Pitcheroo generates from a single set of 7 story elements &mdash; across all three tones.</p>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-card">
+          <span class="tone-badge">Cinematic</span>
+          <p>After the last film distributor pulled out, a single-screen movie theater in Montana sat facing empty seats and unpaid rent, fighting isolation and apathy to keep storytelling alive, until neighbors rallied through community crowdfunding and classic-film nights that packed the aisles, sold out weekends, and lit the marquee with new local pride.</p>
+        </div>
+        <div class="preview-card">
+          <span class="tone-badge">Investor</span>
+          <p>A single-screen Montana theater converted empty seats and unpaid rent into sold-out weekends after the last film distributor exited, using community crowdfunding and classic-film nights to beat isolation and apathy, keep storytelling alive, and build new local pride that positioned it as a durable cultural anchor for rural markets.</p>
+        </div>
+        <div class="preview-card">
+          <span class="tone-badge">Brand</span>
+          <p>Left with empty seats and unpaid rent after the last film distributor walked away, a small Montana single-screen theater leaned on its neighbors, whose community crowdfunding and classic-film nights softened isolation and apathy, kept storytelling alive, and sold out weekends, warming the town with new local pride.</p>
+        </div>
+      </div>
+      <p class="preview-note">Each run generates two variants per tone &mdash; so you always have options to compare.</p>
+    </div>
+  </section>
+
   <!-- USE CASES -->
-  <section class="alt" id="usecases">
+  <section id="usecases">
     <div class="wrap">
       <div class="centered">
         <span class="eyebrow">Use Cases</span>
