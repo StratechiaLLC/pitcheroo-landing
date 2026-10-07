@@ -34,11 +34,13 @@
       --surface:    #ffffff;
       --ink:        #111110;
       --ink-2:      #3c3b37;
-      --muted:      #7a7870;
+      --muted:      #6b6962;
       --border:     #e5e3da;
-      --yellow:     #fbce3e;
-      --yellow-dk:  #c9a000;
-      --yellow-glow: rgba(251, 206, 62, 0.3);
+      --yellow:     #f9c22e;
+      --yellow-dk:  #b38000;      /* fills, borders, lines, shadows only, never text */
+      --gold-text:  #9a6700;      /* gold words on light backgrounds (4.5:1 or better) */
+      --gold-display: #b38000;    /* large gold display text only (3:1 or better) */
+      --yellow-glow: rgba(249, 194, 46, 0.3);
       --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 8px rgba(0,0,0,0.03);
       --shadow-md:  0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
       --shadow-lg:  0 8px 40px rgba(0,0,0,0.12);
@@ -102,9 +104,9 @@
     }
 
     .section-sub {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 560px;
       line-height: 1.65;
       margin-bottom: 48px;
     }
@@ -138,7 +140,7 @@
       box-shadow: 0 4px 0 var(--yellow-dk);
     }
     .btn-primary:hover {
-      background: #fac800;
+      background: #f7b81c;
       transform: translateY(-1px);
       box-shadow: 0 6px 0 var(--yellow-dk), 0 0 24px var(--yellow-glow);
     }
@@ -286,7 +288,7 @@
       max-width: 14ch;
       text-wrap: balance;
     }
-    .hero-headline .accent { color: var(--yellow-dk); }
+    .hero-headline .accent { color: var(--gold-display); }
 
     .hero-tagline {
       font-size: clamp(17px, 2.2vw, 21px);
@@ -314,7 +316,7 @@
       gap: 8px;
       flex-wrap: wrap;
     }
-    .hero-microcopy .sep { opacity: 0.35; }
+    .hero-microcopy .sep { color: var(--muted); }
 
     /* ============================================================
        PITCH PREVIEW
@@ -353,14 +355,14 @@
     }
 
     .preview-card p {
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.6;
       color: var(--ink-2);
     }
 
     .preview-note {
       text-align: center;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       margin-top: 22px;
     }
@@ -405,9 +407,9 @@
       margin-bottom: 8px;
     }
     .step-card p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
     /* ============================================================
@@ -429,7 +431,7 @@
       margin-bottom: 14px;
     }
     .why-left p {
-      font-size: 15px;
+      font-size: 17px;
       color: var(--muted);
       line-height: 1.7;
       margin-bottom: 10px;
@@ -446,9 +448,9 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--ink-2);
-      line-height: 1.65;
+      line-height: 1.55;
     }
     .check-icon {
       width: 20px;
@@ -498,7 +500,7 @@
     }
     .arc svg { display: block; overflow: visible; }
     .arc-line { fill: none; stroke: var(--yellow-dk); stroke-width: 2.5; stroke-linecap: round; }
-    .arc-area { fill: rgba(251, 206, 62, 0.16); stroke: none; }
+    .arc-area { fill: rgba(249, 194, 46, 0.16); stroke: none; }
     .arc-drop { stroke: var(--border); stroke-width: 1.5; stroke-dasharray: 3 4; }
     .arc-dot { fill: var(--yellow); stroke: var(--surface); stroke-width: 3; }
     .arc-dot.peak { stroke: var(--yellow-dk); stroke-width: 2.5; }
@@ -509,7 +511,7 @@
     .arc-rows li { height: 46px; display: flex; flex-direction: column; justify-content: center; line-height: 1.3; }
     .arc-rows b { font-size: 13px; font-weight: 700; letter-spacing: 0.03em; }
     .arc-rows span { font-size: 12.5px; color: var(--muted); }
-    .arc-names li.peak, .arc-rows li.peak b { color: #8a6d00; }
+    .arc-names li.peak, .arc-rows li.peak b { color: var(--gold-text); }
     .arc-tall svg { position: absolute; left: 0; top: 0; }
 
     .elements-output {
@@ -567,9 +569,9 @@
       margin-bottom: 8px;
     }
     .value-card p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
     /* ============================================================
@@ -602,12 +604,12 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.09em;
-      color: var(--yellow-dk);
+      color: var(--gold-text);
       margin-bottom: 10px;
     }
 
-    .use-case-card h4 {
-      font-size: 15px;
+    .use-case-card h3 {
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: -0.01em;
       color: var(--ink);
@@ -615,9 +617,9 @@
       line-height: 1.35;
     }
     .use-case-card p {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
     /* ============================================================
@@ -973,22 +975,22 @@
       <div class="use-cases-grid">
         <div class="use-case-card">
           <div class="use-case-audience">Startup Founders</div>
-          <h4>The investor meeting is in two hours.</h4>
+          <h3>The investor meeting is in two hours.</h3>
           <p>Stop tweaking and start walking in ready. Pitcheroo writes six pitch-ready takes on your story in under a minute &mdash; so you match the room instead of hoping one pitch fits all.</p>
         </div>
         <div class="use-case-card">
           <div class="use-case-audience">Sales &amp; BD Teams</div>
-          <h4>Same product. Six different rooms.</h4>
+          <h3>Same product. Six different rooms.</h3>
           <p>Your CFO wants ROI. Your CMO wants narrative. Your CTO wants proof. Generate tailored angles for every buyer without starting from scratch each time.</p>
         </div>
         <div class="use-case-card">
           <div class="use-case-audience">Advisors &amp; Coaches</div>
-          <h4>Give every client a story that lands.</h4>
+          <h3>Give every client a story that lands.</h3>
           <p>Turn a client&rsquo;s facts into six pitch-ready versions in one sitting &mdash; a strong starting point for the coaching that makes the story theirs.</p>
         </div>
         <div class="use-case-card">
           <div class="use-case-audience">Messaging &amp; Positioning</div>
-          <h4>Find the line that sticks.</h4>
+          <h3>Find the line that sticks.</h3>
           <p>See the same story framed for investors, buyers, and your brand side by side, then pick the angle worth building a homepage, a deck, or a positioning statement around.</p>
         </div>
       </div>
