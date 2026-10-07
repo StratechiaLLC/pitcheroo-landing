@@ -649,6 +649,8 @@
     /* ============================================================
        RESPONSIVE
     ============================================================ */
+    .main-nav .nav-signin { display: none; }   /* desktop uses the header button */
+
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; gap: 40px; padding: 72px 20px 64px; text-align: center; }
       .hero-copy { align-items: center; }
@@ -677,6 +679,8 @@
       .nav-toggle { display: inline-flex; }
       .header-actions { margin-left: auto; }
       .header-actions .btn-ghost { display: none; }
+      /* Sign In moves into the menu when the header button is hidden */
+      .main-nav .nav-signin { display: block; font-weight: 700; color: var(--ink); border-top: 1px solid var(--border); border-radius: 0; margin-top: 4px; padding-top: 12px; }
 
       .preview-grid,
       .steps-grid,
@@ -734,6 +738,7 @@
       <a href="#how">How it Works</a>
       <a href="#examples">Examples</a>
       <a href="#usecases">Use Cases</a>
+      <a href="https://app.pitcheroo.ai" class="nav-signin">Sign In</a>
     </nav>
 
     <div class="header-actions">
