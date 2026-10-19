@@ -4,17 +4,17 @@
   <meta charset="utf-8" />
   <title>PITCHEROO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Win the room with one line. Sell your story in a single breath: six pitch-ready stories from your own facts, in under a minute." />
+  <meta name="description" content="Hook the room from line one. Sell your story in a single breath: six pitch-ready stories from your own facts, in under a minute." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pitcheroo.ai" />
-  <meta property="og:title" content="Pitcheroo: Win the Room With One Line" />
-  <meta property="og:description" content="Win the room with one line. Sell your story in a single breath: six pitch-ready stories from your own facts, in under a minute." />
+  <meta property="og:title" content="Pitcheroo: Hook the Room From Line One" />
+  <meta property="og:description" content="Hook the room from line one. Sell your story in a single breath: six pitch-ready stories from your own facts, in under a minute." />
   <meta property="og:image" content="https://pitcheroo.ai/assets/og-image7.jpg" />
   <meta property="og:image:width" content="2400" />
   <meta property="og:image:height" content="1260" />
-  <meta property="og:image:alt" content="A presenter facing a meeting room, with the headline Win the Room With One Line." />
+  <meta property="og:image:alt" content="A presenter facing a meeting room, with the headline Hook the Room From Line One." />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -310,6 +310,9 @@
       text-wrap: balance;
     }
     .hero-headline .accent { color: var(--gold-display); }
+    @media (max-width: 359px) {
+      .hero-headline { font-size: 36px; }   /* keeps each headline line on one line at 320px */
+    }
 
     .hero-tagline {
       font-size: clamp(17px, 2.2vw, 21px);
@@ -870,7 +873,7 @@
     </div>
 
     <h1 class="hero-headline">
-      Win the Room<br> <span class="accent">With One Line.</span>
+      Hook the Room<br> <span class="accent">From Line One.</span>
     </h1>
 
     <p class="hero-tagline">Sell Your Story in a Single Breath.</p>
