@@ -391,19 +391,110 @@
     /* ============================================================
        HOW IT WORKS
     ============================================================ */
-    .steps-grid {
+    /* Vertical walkthrough: a numbered rail, each step paired with the
+       matching part of the app's real "Check your story" screen. */
+    .walk {
+      max-width: 720px;
+      margin: 0 auto;
+      list-style: none;
+    }
+    .walk-step {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: 38px minmax(0, 1fr);
+      column-gap: 22px;
+      padding-bottom: 40px;
+    }
+    .walk-step:last-child { padding-bottom: 0; }
+    .walk-step::before {          /* rail joining the step numbers */
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 46px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--yellow-dk);
+      opacity: 0.35;
+    }
+    .walk-step:last-child::before { display: none; }
+    .walk-body { display: grid; gap: 16px; }
+    .walk-text h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 6px 0 6px;
+    }
+    .walk-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 560px;
     }
 
-    .step-card {
+    /* Static replica of the app's review screen (display only) */
+    .demo-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
       border-radius: var(--r-lg);
-      padding: 28px 24px;
+      padding: 22px;
       box-shadow: var(--shadow-sm);
     }
+    .demo-head {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .demo-rows { display: grid; gap: 10px; }
+    .demo-row {
+      display: grid;
+      grid-template-columns: 9.5rem minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+    .demo-row dt {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      padding-top: 11px;
+    }
+    .demo-row dd {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 9px 12px;
+    }
+    .demo-length {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 16px;
+    }
+    .demo-seg {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-pill);
+      padding: 3px;
+      background: var(--surface);
+    }
+    .demo-seg span {
+      padding: 9px 16px;
+      border-radius: var(--r-pill);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: center;
+    }
+    .demo-seg .on { background: var(--yellow); color: #111; }
+    .demo-hint { font-size: 14px; color: var(--muted); }
 
     .step-num {
       width: 38px;
@@ -416,21 +507,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
       letter-spacing: -0.02em;
-    }
-
-    .step-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .step-card p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.55;
+      position: relative;         /* sits above the rail */
     }
 
     /* ============================================================
@@ -683,7 +761,6 @@
       .main-nav .nav-signin { display: block; font-weight: 700; color: var(--ink); border-top: 1px solid var(--border); border-radius: 0; margin-top: 4px; padding-top: 12px; }
 
       .preview-grid,
-      .steps-grid,
       .use-cases-grid { grid-template-columns: 1fr; }
 
       .why-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -695,6 +772,10 @@
       .hero { padding: 72px 20px 64px; }
       .header-inner { padding: 0 16px; }
       .use-cases-grid { grid-template-columns: 1fr; }
+      .walk-step { column-gap: 14px; }
+      .demo-card { padding: 16px; }
+      .demo-row { grid-template-columns: 1fr; gap: 4px; }
+      .demo-row dt { padding-top: 0; }
     }
   </style>
 </head>
@@ -863,23 +944,55 @@
         <h2 class="section-title">From blank page to six stories in three simple steps.</h2>
         <p class="section-sub">No pitch deck. No copywriter. No weekend rewrite.</p>
       </div>
-      <div class="steps-grid">
-        <div class="step-card">
+      <!-- Example inputs: the real set behind the See It In Action pitches -->
+      <ol class="walk">
+        <li class="walk-step">
           <div class="step-num">1</div>
-          <h3>Feed It Facts</h3>
-          <p>Enter what you already know &mdash; who you are, where you play, the problem, your goal, the obstacle, the turning point, and the result.</p>
-        </div>
-        <div class="step-card">
+          <div class="walk-body">
+            <div class="walk-text">
+              <h3>Feed It Facts</h3>
+              <p>Enter what you already know &mdash; who you are, where you play, the problem, your goal, the obstacle, the turning point, and the result.</p>
+            </div>
+            <div class="demo-card">
+              <div class="demo-head">Check your story</div>
+              <dl class="demo-rows">
+                <div class="demo-row"><dt>WHO</dt><dd>A single-screen movie theater in Montana</dd></div>
+                <div class="demo-row"><dt>SETTING</dt><dd>after the last film distributor pulled out</dd></div>
+                <div class="demo-row"><dt>TRIGGER</dt><dd>empty seats and unpaid rent</dd></div>
+                <div class="demo-row"><dt>GOAL</dt><dd>keep storytelling alive</dd></div>
+                <div class="demo-row"><dt>STRUGGLE</dt><dd>isolation and apathy</dd></div>
+                <div class="demo-row"><dt>TURNING POINT</dt><dd>community crowdfund and classic-film nights</dd></div>
+                <div class="demo-row"><dt>RESOLUTION</dt><dd>sold-out weekends and new local pride</dd></div>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li class="walk-step">
           <div class="step-num">2</div>
-          <h3>Choose Your Length</h3>
-          <p>Pick a tight 1-sentence hook or a richer 2-sentence story &mdash; so you&rsquo;re covered whether it&rsquo;s a cold email, a deck slide, or a live room.</p>
-        </div>
-        <div class="step-card">
+          <div class="walk-body">
+            <div class="walk-text">
+              <h3>Choose Your Length</h3>
+              <p>Pick a tight 1-sentence hook or a richer 2-sentence story &mdash; so you&rsquo;re covered whether it&rsquo;s a cold email, a deck slide, or a live room.</p>
+            </div>
+            <div class="demo-length">
+              <div class="demo-seg" role="group" aria-label="Pitch length: 1 sentence selected">
+                <span class="on">1 sentence</span>
+                <span>2 sentences</span>
+              </div>
+              <span class="demo-hint">Tight and punchy.</span>
+            </div>
+          </div>
+        </li>
+        <li class="walk-step">
           <div class="step-num">3</div>
-          <h3>Generate &amp; Go</h3>
-          <p>Hit generate and get six polished stories in under a minute. Adjust your inputs and regenerate until one lands exactly right for the moment.</p>
-        </div>
-      </div>
+          <div class="walk-body">
+            <div class="walk-text">
+              <h3>Generate &amp; Go</h3>
+              <p>Hit generate and get six polished stories in under a minute. Adjust your inputs and regenerate until one lands exactly right for the moment.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
